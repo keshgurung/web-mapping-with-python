@@ -7,7 +7,9 @@ This is a python web application that shows population and volcanos from a given
 - `npm3 install folium` : Folium is a Python library that makes it possible visualize data on an interactive Leaflet map.
 
 - goto python3 in terminal
-- > > > import folium
+
+```
+  > > > import folium
   > > > map = folium.Map(location=[80, -100])
   > > > map
   > > > <folium.folium.Map object at 0x10d686040>
@@ -16,6 +18,7 @@ This is a python web application that shows population and volcanos from a given
 
   > > > map = folium.Map(location=[51.2, -0.76], zoom_start=6)
   > > > map.save("Map1.html")
+```
 
 - We have been given a .txt file with valcanos data in it. We will extract (lat, lon) data from the file using pandas. `pip3 install panda`
 
