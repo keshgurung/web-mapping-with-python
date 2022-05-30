@@ -25,20 +25,25 @@ def color_producer(elevation):
 
 map = folium.Map(location=[38.58, -99.09], zoom_start=6, tiles="Stamen Terrain") 
 
-fg = folium.FeatureGroup(name="my map")
+fg_v = folium.FeatureGroup(name="valcanoes")
 
 # we need to iterate 1 to 1 corresponding from lat and lon, we use zip() in our looop
 
 for lt, ln, el, name in zip(lat, lan, elev, name):
     iframe = folium.IFrame(html=html % (name,name,el), width=200, height=100)
-    fg.add_child(folium.CircleMarker(location=[lt,ln], popup=folium.Popup(iframe), radius=8 ,fill_color=color_producer(el), color='grey', fill_opacity=0.7))
+    fg_v.add_child(folium.CircleMarker(location=[lt,ln], popup=folium.Popup(iframe), radius=8 ,fill_color=color_producer(el), color='grey', fill_opacity=0.7))
 #folium.Circlemaker = gives circle icon, radius = size of circle, fill_color = inside the circle, color = circle border, opacity = to show the fill_color
 
+fg_p = folium.FeatureGroup(name="population")
+
 #add a child that creates a polygon around country and reads json file.
-fg.add_child(folium.GeoJson(data=open('world.json', 'r', encoding='utf-8-sig').read(), 
+fg_p.add_child(folium.GeoJson(data=open('world.json', 'r', encoding='utf-8-sig').read(), 
 style_function=lambda x: {'fillColor':'green' if x['properties']['POP2005'] < 10000000 else 'orange' if
 10000000 <= x['properties']['POP2005'] < 20000000 else 'red' }))
 
-map.add_child(fg)
+map.add_child(fg_v)
+map.add_child(fg_p)
+
+map.add_child(folium.LayerControl()) #adds a layer control , a tick box that will show hide features
 
 map.save("Map1.html")
