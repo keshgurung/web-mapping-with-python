@@ -1,0 +1,10 @@
+VOLCANO,LOCATION,ELEV_M,LAT,LONG,ERUPTED,VNUM
+West Eifel Volc Field,	Germany,	600,	50.17,	6.85,	Holocene,	0100-01-
+Chaîne des Puys,	France,	1464,	45.5,	2.75,	Holocene,	0100-02-
+Olot Volc Field,	Spain,	893,	42.17,	2.53,	Uncertain,	0100-03-
+Larderello,	Italy,	500,	43.25,	10.87,	AD, 0-1899	0101-001
+Amiata,	Italy,	1738	,42.9,	11.63,	Uncertain,	0101-002
+Vulsini,	Italy,	800	,42.6,	11.93,	Holocene,	0101-003
+Albano Monte,	Italy,	949	,41.73,	12.7,	Uncertain,	0101-004
+Campi Flegrei,	Italy,	458,	40.83,	14.14,	AD, 0-1899	0101-01=
+
