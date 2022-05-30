@@ -28,3 +28,24 @@ This is a python web application that shows population and volcanos from a given
 >>> lat gives all latitude files
 
 ```
+
+**_ we need to iterate 1 to 1 corresponding from lat and lon, we use zip() in our looop _**
+
+```
+ for i,j in zip([1,2,3], [4,5,6]):
+ print(i,j)
+
+ gives output:
+ 1 4
+ 2 5
+ 3 6
+```
+
+- Exploring population Json data through polygons and adding a child
+  `fg.add_child(folium.GeoJson(data=(open('world.json', 'r', encoding='utf-8-sig').read())))`
+- lambda function, ananomous function
+
+```
+  lambda x: {'fillColor':'green' if x['properties']['POP2005'] < 10000000 else 'orange' if
+10000000 <= x['properties']['POP2005'] < 20000000 else 'red' }
+```
