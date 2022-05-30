@@ -1,9 +1,10 @@
 import folium
-map = folium.Map(location=[38.58, -99.09], zoom_start=6, tiles="Stamen Terrain") 
+map = folium.Map(location=[51.1, -0.9], zoom_start=6, tiles="Stamen Terrain") 
 
 fg = folium.FeatureGroup(name="my map")
 
-fg.add_child(folium.Marker(location=[51.2,-0.76], popup="hi, i am a marker", icon=folium.Icon(color='green')))
+for coordinates in [[50.2, -0.8],[55.1,-0.33],[51.5,-0.4],[56.6,-0.6]]:
+    fg.add_child(folium.Marker(location=coordinates, popup="hi, i am a marker", icon=folium.Icon(color='green')))
 
 map.add_child(fg)
 
